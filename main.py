@@ -163,7 +163,7 @@ class EditDialog(QDialog):
     def update_student(self):
         connection = DatabaseConnection().connect()
         cursor = connection.cursor()
-        cursor.execute("UPDATE students SET name = ?, course = ?, mobile = ?, WHERE id = ?",
+        cursor.execute("UPDATE students SET name = ?, course = ?, mobile = ? WHERE id = ?",
                        (self.student_name.text(),
                         self.course_name.itemText(self.course_name.currentIndex()),
                         self.mobile.text(),
